@@ -7,8 +7,7 @@ interface IParams{
 }
 export const DELETE  = async (
     request: Request,
-    {params}:{ params: Promise<IParams>}
-)=>{
+    {params}:{ params: Promise<IParams>}) : Promise<NextResponse> =>{
     const curUser = await getCurrentUser()
     const {taskId} =await params
     if(!curUser || !taskId || typeof taskId !== "string"){

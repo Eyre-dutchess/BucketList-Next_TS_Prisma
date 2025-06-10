@@ -11,7 +11,7 @@ export const DELETE  = async (
     const curUser = await getCurrentUser()
     const {taskId} =await params
     if(!curUser || !taskId || typeof taskId !== "string"){
-        return null
+         return NextResponse.json({ error: 'cant get valid information' }, { status: 500 })
     }
 
     const result = await prisma.task.delete({

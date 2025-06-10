@@ -9,7 +9,9 @@ export const POST =async (request:Request): Promise<NextResponse> =>{
 
     const curUser = await getCurrentUser()
 
-    if(!curUser) return null;
+    if(!curUser){
+        return NextResponse.json({ error: 'cant get current user' }, { status: 500 })
+    };
     const result = await prisma.task.create({
         data:{
             title, detail, status,

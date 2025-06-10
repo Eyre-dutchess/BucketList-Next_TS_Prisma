@@ -1,4 +1,4 @@
-import { Task, User } from "@prisma/client";
+import { Task, User } from "../generated/prisma";
 
 export type SafeUser = Omit<
     User,

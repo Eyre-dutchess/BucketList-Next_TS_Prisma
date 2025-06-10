@@ -4,7 +4,7 @@ interface IParams{
     taskId?: string
 }
 export const getCurrentTask = async (
-    params:IParams
+    params: Promise<IParams>
 ) =>{
     const {taskId} = await params
     const curTask = await prisma.task.findUnique({

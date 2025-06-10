@@ -1,9 +1,9 @@
-"use server"
+
 import { NextResponse } from "next/server";
 import prisma from "@/app/libs/prismadb";
 import { getCurrentUser } from "@/app/action/getCurrentUser";
 
-export const POST =async (request:Request) =>{
+export const POST =async (request:Request): : Promise<NextResponse> =>{
     const resp = await request.json()
     const {title, detail, status} = resp;
 

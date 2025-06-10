@@ -9,7 +9,7 @@ import { EditTaskModal } from "@/app/component/modal/EditTaskModal";
 interface IParams{
     taskId: string
 }
-export default async function Home({params}:{params:IParams}) {
+export default async function Home({params}:{params: Promise<IParams>}) {
   const tasks = await getTasks()
   const curUser = await getCurrentUser()
   const curTask = await getCurrentTask(params)
